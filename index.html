@@ -1,0 +1,1933 @@
+﻿<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#020302">
+
+<title>Keto Bakery</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+  background:#020302;
+  color:#fff;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+
+  /* =========================
+     MOBILE BACKGROUND IMAGE
+     ========================= */
+
+  background-image:
+    linear-gradient(
+      rgba(2,3,2,.08),
+      rgba(2,3,2,.08)
+    ),
+    url("backgound.jpg");
+
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:100% auto;
+  background-attachment:scroll;
+
+}
+
+
+/* BACKGROUND CONTINUATION */
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2,3,2,0) 0%,
+      rgba(2,3,2,.18) 45%,
+      rgba(2,3,2,.45) 100%
+    );
+}
+
+
+/* STARS */
+
+.stars-container{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  z-index:0;
+
+  pointer-events:none;
+
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+
+  background:#fff;
+
+  border-radius:50%;
+
+  opacity:.3;
+
+  animation:twinkle linear infinite;
+}
+
+.star.green-tint{
+  background:#b9ed18;
+}
+
+@keyframes twinkle{
+
+  0%,100%{
+    opacity:.2;
+    transform:scale(.8);
+  }
+
+  50%{
+    opacity:.9;
+    transform:scale(1.3);
+  }
+
+}
+
+
+/* CONTAINER */
+
+.container{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-width:650px;
+
+  margin:auto;
+
+  padding:16px 12px 35px;
+}
+
+
+/* HEADER */
+
+.header{
+  text-align:center;
+
+  padding:24px 0 10px;
+}
+
+.logo{
+  display:inline-block;
+  position:relative;
+  direction:ltr;
+}
+
+.logo-title{
+  display:flex;
+  align-items:center;
+
+  gap:3px;
+}
+
+.keto{
+  color:#b9ed18;
+
+  font-size:65px;
+
+  line-height:.9;
+
+  font-weight:900;
+
+  letter-spacing:-5px;
+
+  text-shadow:
+    0 0 18px rgba(185,237,24,.25),
+    0 3px 10px #000;
+}
+
+.bakery{
+  color:#b9ed18;
+
+  font-size:53px;
+
+  line-height:1;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-weight:bold;
+
+  text-shadow:
+    0 3px 10px #000;
+}
+
+.logo-clover{
+  position:absolute;
+
+  left:-32px;
+  top:-20px;
+
+  color:#b9ed18;
+
+  font-size:48px;
+
+  text-shadow:
+    0 3px 10px #000;
+}
+
+.logo-badge{
+  position:absolute;
+
+  left:90px;
+  top:-17px;
+
+  background:#f2e9cf;
+
+  color:#403a2f;
+
+  border:2px solid #b9ed18;
+
+  border-radius:18px;
+
+  padding:2px 11px;
+
+  font:900 8px Arial;
+
+  transform:rotate(4deg);
+}
+
+.subtitle{
+  margin-top:22px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:9px;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  text-shadow:
+    0 2px 8px #000;
+}
+
+.subtitle span{
+  color:#b9ed18;
+
+  font-size:21px;
+}
+
+
+/* GLASS CARDS */
+
+.glass-card{
+
+  background:
+    rgba(7,12,7,.32)!important;
+
+  backdrop-filter:
+    blur(8px)
+    saturate(145%);
+
+  -webkit-backdrop-filter:
+    blur(8px)
+    saturate(145%);
+
+  border:
+    1px solid
+    rgba(185,237,24,.30)!important;
+
+  box-shadow:
+
+    0 8px 32px
+    rgba(0,0,0,.40),
+
+    inset 0 0 18px
+    rgba(185,237,24,.05);
+}
+
+
+/* FEATURES */
+
+.features{
+
+  margin-top:12px;
+
+  padding:16px 10px 18px;
+
+  border-radius:27px;
+}
+
+.features-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:7px;
+}
+
+.feature{
+  text-align:center;
+}
+
+.feature-icon{
+
+  width:68px;
+  height:68px;
+
+  margin:0 auto 8px;
+
+  border:
+    2px solid #b9ed18;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  color:#b9ed18;
+
+  font-size:29px;
+
+  background:
+    rgba(5,10,5,.38);
+
+  backdrop-filter:
+    blur(4px);
+
+  -webkit-backdrop-filter:
+    blur(4px);
+
+  box-shadow:
+    0 0 15px
+    rgba(185,237,24,.15);
+}
+
+.feature-text{
+
+  font-size:11px;
+
+  line-height:1.65;
+
+  color:#eee;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+
+/* LINKS */
+
+.links{
+  margin-top:16px;
+}
+
+.link{
+
+  min-height:63px;
+
+  margin-bottom:9px;
+
+  padding:6px 12px;
+
+  display:flex;
+
+  align-items:center;
+
+  text-decoration:none;
+
+  color:#fff!important;
+
+  background:
+    rgba(7,12,7,.35)!important;
+
+  backdrop-filter:
+    blur(7px)
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(7px)
+    saturate(135%);
+
+  border:
+    1px solid
+    rgba(185,237,24,.45);
+
+  border-radius:50px;
+
+  box-shadow:
+
+    0 4px 20px
+    rgba(0,0,0,.40),
+
+    0 0 12px
+    rgba(185,237,24,.08);
+
+  transition:
+    transform .2s ease;
+}
+
+.link:active{
+  transform:scale(.98);
+}
+
+.link:visited,
+.link:active{
+  color:#fff!important;
+}
+
+.link-icon{
+
+  width:49px;
+  height:49px;
+
+  flex:0 0 49px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:22px;
+
+  margin-left:12px;
+
+  color:#fff;
+
+  box-shadow:
+    0 4px 10px
+    rgba(0,0,0,.3);
+}
+
+.phone{
+  background:#93cf12;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.tiktok{
+  background:#000;
+  border:1px solid #333;
+}
+
+.maps{
+  background:#EA4335;
+}
+
+.facebook{
+  background:#1877F2;
+}
+
+.instagram{
+
+  background:
+    radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285AEB 90%
+    );
+}
+
+.link-content{
+
+  flex:1;
+
+  text-align:right;
+
+  direction:ltr;
+}
+
+.link-label{
+
+  direction:rtl;
+
+  text-align:right;
+
+  color:#ddd;
+
+  font-size:10px;
+
+  text-shadow:
+    0 2px 6px #000;
+}
+
+.link-value{
+
+  font-size:18px;
+
+  font-weight:500;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+.arrow{
+
+  font-size:28px;
+
+  color:#eee;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+
+/* PRODUCTS */
+
+.products{
+
+  margin-top:22px;
+
+  padding:12px 9px 13px;
+
+  position:relative;
+
+  border-radius:27px;
+}
+
+.products-title{
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:11px;
+
+  font-size:17px;
+
+  font-weight:800;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+.products-title:before,
+.products-title:after{
+
+  content:"❧";
+
+  color:#b9ed18;
+
+  font-size:21px;
+}
+
+.products-scroll{
+
+  display:flex;
+
+  gap:7px;
+
+  overflow-x:auto;
+
+  direction:rtl;
+
+  scroll-behavior:smooth;
+
+  scroll-snap-type:x mandatory;
+
+  padding-bottom:8px;
+
+  scrollbar-width:none;
+}
+
+.products-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+.product{
+
+  flex:0 0 112px;
+
+  scroll-snap-align:center;
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    rgba(185,237,24,.35);
+
+  border-radius:15px;
+
+  background:
+    rgba(8,12,8,.45);
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
+}
+
+.product-img{
+
+  width:112px;
+  height:105px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  background:#181818;
+}
+
+.product-img img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.product-name{
+
+  min-height:40px;
+
+  padding:5px 2px;
+
+  background:
+    rgba(16,23,6,.72);
+
+  color:#fff;
+
+  font-size:10px;
+
+  line-height:1.45;
+
+  text-align:center;
+}
+
+.product-badge{
+
+  position:absolute;
+
+  bottom:4px;
+  left:4px;
+
+  width:25px;
+  height:25px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:#b9ed18;
+
+  color:#111;
+
+  box-shadow:
+    0 2px 6px
+    rgba(0,0,0,.4);
+}
+
+
+/* SCROLL BUTTONS */
+
+.scroll-btn{
+
+  position:absolute;
+
+  top:52%;
+
+  width:38px;
+  height:38px;
+
+  border-radius:50%;
+
+  border:
+    2px solid #b9ed18;
+
+  background:
+    rgba(5,7,5,.75);
+
+  backdrop-filter:
+    blur(6px);
+
+  -webkit-backdrop-filter:
+    blur(6px);
+
+  color:#fff;
+
+  z-index:3;
+
+  font-size:21px;
+
+  cursor:pointer;
+}
+
+.scroll-left{
+  left:-10px;
+}
+
+.scroll-right{
+  right:-10px;
+}
+
+
+/* DOTS */
+
+.dots{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:8px;
+
+  margin-top:3px;
+}
+
+.dot{
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:#777;
+}
+
+.dot.active{
+  background:#b9ed18;
+}
+
+
+/* BOTTOM */
+
+.bottom-features{
+
+  margin:22px 18px 0;
+
+  padding:15px 5px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  border-radius:25px;
+}
+
+.bottom-feature{
+
+  text-align:center;
+
+  padding:0 6px;
+
+  border-left:
+    1px solid
+    rgba(185,237,24,.23);
+}
+
+.bottom-feature:last-child{
+  border-left:0;
+}
+
+.bottom-icon{
+
+  font-size:28px;
+
+  color:#b9ed18;
+
+  margin-bottom:5px;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+.bottom-text{
+
+  font-size:9px;
+
+  line-height:1.6;
+
+  color:#eee;
+
+  text-shadow:
+    0 2px 7px #000;
+}
+
+
+/* FOOTER */
+
+.footer{
+
+  text-align:center;
+
+  padding:24px 0 6px;
+}
+
+.tagline{
+
+  color:#b9ed18;
+
+  font-size:25px;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  text-shadow:
+    0 2px 10px #000;
+}
+
+.cta{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  margin-top:12px;
+
+  padding:11px 22px;
+
+  border-radius:50px;
+
+  background:#b9ed18!important;
+
+  color:#101010!important;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  text-decoration:none;
+
+  box-shadow:
+    0 4px 15px
+    rgba(185,237,24,.3);
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  body{
+
+    background-size:
+      100% auto;
+
+    background-position:
+      center top;
+
+  }
+
+  .container{
+
+    padding:
+      12px 9px 28px;
+  }
+
+  .header{
+
+    padding-top:20px;
+  }
+
+  .keto{
+    font-size:53px;
+  }
+
+  .bakery{
+    font-size:44px;
+  }
+
+  .logo-clover{
+
+    font-size:42px;
+
+    left:-27px;
+
+    top:-17px;
+  }
+
+  .logo-badge{
+
+    left:74px;
+
+    top:-13px;
+  }
+
+  .subtitle{
+
+    font-size:13px;
+
+    margin-top:18px;
+  }
+
+  .feature-icon{
+
+    width:56px;
+    height:56px;
+
+    font-size:23px;
+  }
+
+  .feature-text{
+    font-size:9px;
+  }
+
+  .link{
+    min-height:57px;
+  }
+
+  .link-icon{
+
+    width:44px;
+    height:44px;
+
+    flex-basis:44px;
+
+    font-size:19px;
+  }
+
+  .link-value{
+    font-size:15px;
+  }
+
+  .arrow{
+    font-size:24px;
+  }
+
+  .product{
+    flex-basis:105px;
+  }
+
+  .product-img{
+
+    width:105px;
+    height:99px;
+  }
+
+  .product-name{
+    font-size:9px;
+  }
+
+  .bottom-features{
+
+    margin-left:12px;
+    margin-right:12px;
+  }
+
+  .bottom-icon{
+    font-size:23px;
+  }
+
+  .bottom-text{
+    font-size:7.5px;
+  }
+
+  .tagline{
+    font-size:22px;
+  }
+
+  .cta{
+
+    font-size:10px;
+
+    padding:
+      9px 16px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div
+  class="stars-container"
+  id="starsContainer">
+</div>
+
+
+<div class="container">
+
+
+<header class="header">
+
+
+  <div class="logo">
+
+
+    <div class="logo-clover">
+      ☘
+    </div>
+
+
+    <div class="logo-badge">
+      BAKERY
+    </div>
+
+
+    <div class="logo-title">
+
+      <span class="keto">
+        Keto
+      </span>
+
+      <span class="bakery">
+        Bakery
+      </span>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="subtitle">
+
+    <span>❧</span>
+
+    بەرهەمەکانی کیتۆبەیکەری گونجاوە بۆ
+
+    <span>❧</span>
+
+  </div>
+
+
+</header>
+
+
+
+<section class="features glass-card">
+
+
+  <div class="features-grid">
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        💧
+      </div>
+
+      <div class="feature-text">
+
+        تووشبووانی<br>
+        نەخۆشی شەکرە
+
+      </div>
+
+    </div>
+
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🌾
+      </div>
+
+      <div class="feature-text">
+
+        هەستیاری<br>
+        گلوتین
+
+      </div>
+
+    </div>
+
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🥑
+      </div>
+
+      <div class="feature-text">
+
+        پەیڕەوانی<br>
+        سیستەمی کیتۆ
+
+      </div>
+
+    </div>
+
+
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        ♡
+      </div>
+
+      <div class="feature-text">
+
+        ئەو کەسانەی گرنگی
+        بە خواردنی تەندروست دەدەن
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<section class="links">
+
+
+  <a
+    class="link"
+    href="tel:+9647702488208">
+
+
+    <div class="link-icon phone">
+
+      <i class="fa-solid fa-phone"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-label">
+
+        ژمارە تەلەفون
+
+      </div>
+
+
+      <div class="link-value">
+
+        +964 770 248 8208
+
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+
+  <a
+    class="link"
+    href="https://wa.me/9647702488208"
+    target="_blank">
+
+
+    <div class="link-icon whatsapp">
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-value">
+        Whatsapp
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+
+  <a
+    class="link"
+    href="https://www.tiktok.com/@ketobakery2021"
+    target="_blank">
+
+
+    <div class="link-icon tiktok">
+
+      <i class="fa-brands fa-tiktok"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-value">
+        TikTok
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+
+  <a
+    class="link"
+    href="https://share.google/LdUbNJOfi450qnB0T"
+    target="_blank">
+
+
+    <div class="link-icon maps">
+
+      <i class="fa-solid fa-location-dot"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-value">
+        Location (Google Maps)
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+
+  <a
+    class="link"
+    href="https://www.facebook.com/KetoBK"
+    target="_blank">
+
+
+    <div class="link-icon facebook">
+
+      <i class="fa-brands fa-facebook-f"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-value">
+        Facebook
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+
+  <a
+    class="link"
+    href="https://www.instagram.com/ketobakery2021"
+    target="_blank">
+
+
+    <div class="link-icon instagram">
+
+      <i class="fa-brands fa-instagram"></i>
+
+    </div>
+
+
+    <div class="link-content">
+
+      <div class="link-value">
+        Instagram
+      </div>
+
+    </div>
+
+
+    <div class="arrow">
+      ›
+    </div>
+
+
+  </a>
+
+
+</section>
+
+
+
+<section class="products glass-card">
+
+
+  <h2 class="products-title">
+
+    نموونەی بەرهەمەکان
+
+  </h2>
+
+
+  <button
+    class="scroll-btn scroll-right"
+    onclick="scrollProducts(1)">
+
+    ›
+
+  </button>
+
+
+  <button
+    class="scroll-btn scroll-left"
+    onclick="scrollProducts(-1)">
+
+    ‹
+
+  </button>
+
+
+
+  <div
+    class="products-scroll"
+    id="productsScroll">
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="1.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🥮
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="2.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🫓
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٢
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="3.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          ⭐
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٣
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="4.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🍞
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٤
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="5.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🍪
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٥
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="6.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🍩
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٦
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="7.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🍰
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٧
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="8.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🥤
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٨
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="9.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          📦
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ٩
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="10.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🧁
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١٠
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="11.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🍪
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١١
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="12.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          ✨
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١٢
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="13.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🥐
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١٣
+      </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+      <div class="product-img">
+
+        <img src="14.jpg" alt="بەرهەم">
+
+        <div class="product-badge">
+          🥖
+        </div>
+
+      </div>
+
+      <div class="product-name">
+        بەرهەمی ١٤
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div
+    class="dots"
+    id="dotsContainer">
+  </div>
+
+
+</section>
+
+
+
+<section class="bottom-features glass-card">
+
+
+  <div class="bottom-feature">
+
+    <div class="bottom-icon">
+      💧
+    </div>
+
+    <div class="bottom-text">
+
+      تووشبووانی<br>
+      نەخۆشی شەکرە
+
+    </div>
+
+  </div>
+
+
+
+  <div class="bottom-feature">
+
+    <div class="bottom-icon">
+      🌾
+    </div>
+
+    <div class="bottom-text">
+
+      هەستیاری<br>
+      گلوتین
+
+    </div>
+
+  </div>
+
+
+
+  <div class="bottom-feature">
+
+    <div class="bottom-icon">
+      🌿
+    </div>
+
+    <div class="bottom-text">
+
+      پەیڕەوانی<br>
+      سیستەمی کیتۆ
+
+    </div>
+
+  </div>
+
+
+
+  <div class="bottom-feature">
+
+    <div class="bottom-icon">
+      ♡
+    </div>
+
+    <div class="bottom-text">
+
+      ئەو کەسانەی گرنگی<br>
+      بە خواردنی تەندروست دەدەن
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+<footer class="footer">
+
+
+  <div class="tagline">
+
+    ❧ Healthy • Delicious • Keto ❧
+
+  </div>
+
+
+  <a
+    class="cta"
+    href="tel:+9647702488208">
+
+    ♥ &nbsp;
+
+    خۆت بە خواردنی تەندروست خۆشحاڵ بکەرە
+
+    &nbsp; ♥
+
+  </a>
+
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+/* STARS */
+
+const starsContainer =
+  document.getElementById(
+    'starsContainer'
+  );
+
+const starCount = 65;
+
+
+for(let i=0;i<starCount;i++){
+
+  const star =
+    document.createElement('div');
+
+  star.className =
+    'star' +
+    (
+      Math.random()>.8
+      ? ' green-tint'
+      : ''
+    );
+
+  const size =
+    Math.random()*3+1;
+
+  star.style.width =
+    size+'px';
+
+  star.style.height =
+    size+'px';
+
+  star.style.top =
+    Math.random()*100+'%';
+
+  star.style.left =
+    Math.random()*100+'%';
+
+  star.style.animationDuration =
+    (Math.random()*3+2)+'s';
+
+  star.style.animationDelay =
+    Math.random()*3+'s';
+
+  starsContainer.appendChild(star);
+
+}
+
+
+/* PRODUCTS */
+
+const products =
+  document.getElementById(
+    "productsScroll"
+  );
+
+const dotsContainer =
+  document.getElementById(
+    "dotsContainer"
+  );
+
+const productCount =
+  products.querySelectorAll(
+    '.product'
+  ).length;
+
+
+/* DOTS */
+
+dotsContainer.innerHTML='';
+
+
+for(let i=0;i<productCount;i++){
+
+  const dot =
+    document.createElement('span');
+
+  dot.className =
+    'dot' +
+    (
+      i===0
+      ? ' active'
+      : ''
+    );
+
+  dotsContainer.appendChild(dot);
+
+}
+
+
+const dots =
+  document.querySelectorAll(
+    ".dot"
+  );
+
+
+/* SCROLL */
+
+function scrollProducts(direction){
+
+  products.scrollBy({
+
+    left:
+      direction*230,
+
+    behavior:
+      "smooth"
+
+  });
+
+}
+
+
+/* ACTIVE DOT */
+
+products.addEventListener(
+  "scroll",
+  ()=>{
+
+    const max =
+      products.scrollWidth -
+      products.clientWidth;
+
+    if(max<=0)
+      return;
+
+    const progress =
+      Math.abs(
+        products.scrollLeft
+      )/max;
+
+    let index =
+      Math.round(
+        progress*
+        (productCount-1)
+      );
+
+    index =
+      Math.max(
+        0,
+        Math.min(
+          productCount-1,
+          index
+        )
+      );
+
+    dots.forEach(
+      d=>
+      d.classList.remove(
+        "active"
+      )
+    );
+
+    if(dots[index]){
+
+      dots[index]
+        .classList.add(
+          "active"
+        );
+
+    }
+
+  }
+);
+
+
+</script>
+
+
+</body>
+</html>
